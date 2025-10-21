@@ -16,10 +16,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": [
-      "vitest/globals",
-      "@testing-library/jest-dom"
-    ],
     "paths": {
       "@/components/*": [
         "./app/components/*"

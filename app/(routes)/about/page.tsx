@@ -13,7 +13,14 @@ export default function AboutPage() {
       <header className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
         <div className="relative flex h-80 items-center justify-center">
           <div className="relative h-72 w-72 overflow-hidden rounded-[30%_70%_60%_40%/40%_50%_50%_60%] border border-magenta/40 shadow-glass">
-            <Image src="/images/portrait.svg" alt="Portrait" fill className="object-cover" priority />
+            <Image
+              src="/images/portrait.svg"
+              alt="Portrait"
+              fill
+              className="object-cover"
+              priority
+              sizes="18rem"
+            />
           </div>
           <div className="absolute -left-6 -top-6 h-16 w-16 animate-float rounded-full bg-magenta/60 blur-2xl" />
         </div>

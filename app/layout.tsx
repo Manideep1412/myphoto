@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <div className="relative min-h-screen bg-gradient-to-br from-charcoal via-slate-900 to-black">
             <Navbar />
-            <main className="pt-24">
+            <main className="relative pt-24">
               <PageTransition>{children}</PageTransition>
             </main>
           </div>

@@ -5,9 +5,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import type { Series, Photo } from "@/data/photos";
+import { GalleryCard } from "@/app/components/gallery-card";
+import { Lightbox } from "@/app/components/lightbox";
 
 export default function SeriesClient({ series, photos }: { series: Series; photos: Photo[] }) {
   const [slider, setSlider] = useState(50);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   return (
     <div className="mx-auto max-w-5xl space-y-20 px-6 pb-32 pt-12">
@@ -95,15 +98,7 @@ export default function SeriesClient({ series, photos }: { series: Series; photo
         <h2 className="text-2xl font-semibold text-white">Gallery</h2>
         <div className="gallery-grid">
           {photos.map((photo) => (
-            <div key={photo.id} className="gallery-item">
-              <div className="relative aspect-[3/4]">
-                <Image src={photo.src} alt={photo.description} fill className="object-cover" sizes="(min-width: 1024px) 40vw, 100vw" />
-              </div>
-              <div className="px-4 py-3 text-white/70">
-                <p className="text-sm font-semibold text-white">{photo.title}</p>
-                <p className="text-xs uppercase tracking-[0.3em]">{photo.exif.camera}</p>
-              </div>
-            </div>
+            <GalleryCard key={photo.id} photo={photo} onClick={(item) => setActiveId(item.id)} />
           ))}
         </div>
       </section>
@@ -113,6 +108,8 @@ export default function SeriesClient({ series, photos }: { series: Series; photo
           Book a shoot
         </Link>
       </footer>
+
+      {activeId ? <Lightbox photos={photos} activeId={activeId} onClose={() => setActiveId(null)} /> : null}
     </div>
   );
 }

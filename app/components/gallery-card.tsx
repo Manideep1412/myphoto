@@ -7,14 +7,13 @@ import classNames from "classnames";
 import { withImageParams } from "@/lib/image-url";
 
 export function GalleryCard({ photo, onClick }: { photo: Photo; onClick?: (photo: Photo) => void }) {
-  const isSvg = photo.src.trim().toLowerCase().endsWith(".svg");
-  const imageProps = isSvg
-    ? {}
-    : {
-        placeholder: "blur" as const,
-        blurDataURL: photo.blurDataUrl,
-      };
-
+   const isSvg = photo.src.trim().toLowerCase().endsWith(".svg");
+   const imageProps = isSvg
+      ? {}
+      : {
+          placeholder: "blur" as const,
+          blurDataURL: photo.blurDataUrl,
+        };
   return (
     <motion.article
       layout

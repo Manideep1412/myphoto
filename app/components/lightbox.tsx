@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, ZoomIn, ZoomOut, Maximize2, Ruler, SplitSquareHorizontal } from "lucide-react";
+import { withImageParams } from "@/lib/image-url";
 
 const spring = { type: "spring", stiffness: 260, damping: 32 };
 
@@ -106,7 +107,7 @@ export function Lightbox({ photos, activeId, onClose }: { photos: Photo[]; activ
                   className="relative mx-auto h-full w-full"
                 >
                   <Image
-                    src={current.src}
+                    src={withImageParams(current.src, "auto=format&fit=crop&w=1600&q=80")}
                     alt={current.description}
                     fill
                     className="object-contain"
@@ -208,7 +209,13 @@ export function Lightbox({ photos, activeId, onClose }: { photos: Photo[]; activ
                       current.id === photo.id ? "border-magenta/80" : "border-white/10"
                     )}
                   >
-                    <Image src={photo.src} alt={photo.title} fill sizes="64px" className="object-cover" />
+                    <Image
+                      src={withImageParams(photo.src, "auto=format&fit=crop&w=200&q=70")}
+                      alt={photo.title}
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
                   </button>
                 ))}
               </div>

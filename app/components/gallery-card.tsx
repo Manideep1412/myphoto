@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Photo } from "@/data/photos";
 import { motion } from "framer-motion";
 import classNames from "classnames";
+import { withImageParams } from "@/lib/image-url";
 
 export function GalleryCard({ photo, onClick }: { photo: Photo; onClick?: (photo: Photo) => void }) {
   return (
@@ -23,7 +24,7 @@ export function GalleryCard({ photo, onClick }: { photo: Photo; onClick?: (photo
     >
       <div className="relative aspect-[3/4] w-full overflow-hidden">
         <Image
-          src={`${photo.src}&auto=format&fit=crop&w=1200&q=80`}
+          src={withImageParams(photo.src)}
           alt={photo.description}
           fill
           className="object-cover transition duration-700 ease-out hover:scale-105"

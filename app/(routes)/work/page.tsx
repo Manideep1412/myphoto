@@ -1,10 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { listPhotos, listSeries, listTags } from "@/lib/media";
-import { GalleryCard } from "@/app/components/gallery-card";
-import { Lightbox } from "@/app/components/lightbox";
-import { useIntersectionObserver } from "@react-hook/intersection-observer";
+import { GalleryCard } from "@/components/gallery-card";
+import { Lightbox } from "@/components/lightbox";
 import Link from "next/link";
 
 const STEP = 4;
@@ -18,13 +17,40 @@ export default function WorkPage() {
   const photos = useMemo(() => listPhotos({ tag: filter }), [filter]);
   const series = listSeries();
 
-  const loadMore = useIntersectionObserver({
-    onChange: (entry) => {
-      if (entry.isIntersecting) {
-        setVisible((count) => Math.min(photos.length, count + STEP));
-      }
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const target = loadMoreRef.current;
+    if (!target) {
+      return undefined;
     }
-  });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible((count) => {
+              if (count >= photos.length) {
+                return count;
+              }
+              return Math.min(photos.length, count + STEP);
+            });
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px 200px 0px",
+        threshold: 0
+      }
+    );
+
+    observer.observe(target);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [photos.length]);
 
   return (
     <div className="mx-auto max-w-6xl space-y-20 px-6 pb-32">
@@ -68,7 +94,7 @@ export default function WorkPage() {
           <GalleryCard key={photo.id} photo={photo} onClick={(item) => setOpenId(item.id)} />
         ))}
       </section>
-      <div ref={loadMore.ref} className="h-12 w-full animate-pulse rounded-full border border-dashed border-white/20" />
+      <div ref={loadMoreRef} className="h-12 w-full animate-pulse rounded-full border border-dashed border-white/20" />
 
       <section className="space-y-6">
         <h2 className="text-2xl font-semibold text-white">Featured series</h2>

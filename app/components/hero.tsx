@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useSplitTextReveal } from "@/lib/animations";
 import Link from "next/link";
 
@@ -13,28 +13,10 @@ export function Hero() {
 
   useSplitTextReveal("[data-split]");
 
-  useEffect(() => {
-    const video = document.getElementById("hero-video") as HTMLVideoElement | null;
-    if (video) {
-      video.play().catch(() => {
-        /* noop for browsers blocking autoplay */
-      });
-    }
-  }, []);
-
   return (
     <section ref={heroRef} className="relative overflow-hidden">
-      <div className="absolute inset-0">
-        <video
-          id="hero-video"
-          className="h-full w-full object-cover opacity-40"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="https://cdn.coverr.co/videos/coverr-neon-lights-in-tokyo-8482/1080p.mp4" type="video/mp4" />
-        </video>
+      <div className="absolute inset-0" aria-hidden>
+        <div className="hero-gradient absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black" />
       </div>
       <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-6 py-24">

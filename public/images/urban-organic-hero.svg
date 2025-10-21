@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#091018" />
+      <stop offset="50%" stop-color="#1a1f2f" />
+      <stop offset="100%" stop-color="#021e13" />
+    </linearGradient>
+    <radialGradient id="burst" cx="0.3" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#ff8a5c" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ff8a5c" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#28f7ac" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b8b6d" stop-opacity="0.3" />
+    </linearGradient>
+  </defs>
+  <rect width="2000" height="1200" fill="url(#bg)" />
+  <circle cx="620" cy="380" r="520" fill="url(#burst)" />
+  <g fill="none" stroke="#ffb347" stroke-width="12" stroke-opacity="0.35">
+    <path d="M260 1200 V420 Q260 260 420 240 T620 420 V1200" />
+    <path d="M860 1200 V460 Q860 320 1000 300 T1180 460 V1200" />
+  </g>
+  <g>
+    <rect x="420" y="360" width="180" height="840" rx="90" fill="url(#tower)" />
+    <rect x="990" y="420" width="220" height="780" rx="110" fill="url(#tower)" opacity="0.8" />
+    <rect x="1420" y="380" width="180" height="820" rx="90" fill="#1fe4b3" opacity="0.2" />
+  </g>
+  <path d="M0 960 C260 880 460 940 700 980 C1020 1030 1240 960 1500 900 C1700 850 1860 880 2000 940 V1200 H0 Z" fill="#0f2f21" opacity="0.7" />
+  <g stroke="#9fffc0" stroke-width="5" stroke-opacity="0.4" fill="none">
+    <path d="M140 960 C320 860 520 900 720 960" />
+    <path d="M960 940 C1160 1000 1360 980 1580 900" />
+  </g>
+</svg>

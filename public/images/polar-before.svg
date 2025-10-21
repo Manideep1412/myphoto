@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="polarBefore" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#09121e" />
+      <stop offset="100%" stop-color="#030610" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#polarBefore)" />
+  <g fill="#0b1f33" opacity="0.75">
+    <path d="M0 520 C200 500 360 480 540 520 C840 580 1080 540 1320 500 C1460 480 1540 490 1600 520 V900 H0 Z" />
+  </g>
+  <g stroke="#1e3a59" stroke-width="10" stroke-opacity="0.7" fill="none">
+    <path d="M140 600 Q320 560 540 600 T980 580 T1460 620" />
+    <path d="M80 700 Q240 740 420 720 T960 700 T1500 740" />
+  </g>
+</svg>

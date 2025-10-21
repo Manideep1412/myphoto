@@ -1,6 +1,7 @@
 "use client";
 
 import { listPrints } from "@/lib/media";
+import { withImageParams } from "@/lib/image-url";
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
@@ -146,7 +147,7 @@ function TiltCard({ print, hovered, setHovered, onAdd }: TiltCardProps) {
         onMouseLeave={() => setHovered(null)}
       >
         <Image
-          src={`${print.image}&auto=format&fit=crop&w=1200&q=80`}
+          src={withImageParams(print.image)}
           alt={print.title}
           fill
           className={classNames("object-cover transition duration-700", hovered === print.id ? "scale-105" : "scale-100")}

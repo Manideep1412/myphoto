@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1200">
+  <defs>
+    <linearGradient id="polarBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#040b16" />
+      <stop offset="50%" stop-color="#061d33" />
+      <stop offset="100%" stop-color="#020610" />
+    </linearGradient>
+    <radialGradient id="polarAurora" cx="0.6" cy="0.2" r="0.7">
+      <stop offset="0%" stop-color="#5cf9ff" stop-opacity="0.9" />
+      <stop offset="60%" stop-color="#2f7fff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#163968" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="2000" height="1200" fill="url(#polarBg)" />
+  <ellipse cx="1200" cy="260" rx="1100" ry="500" fill="url(#polarAurora)" />
+  <g fill="#061628" opacity="0.8">
+    <path d="M0 820 C260 700 500 760 720 800 C980 840 1260 760 1500 720 C1740 680 1880 700 2000 760 V1200 H0 Z" />
+  </g>
+  <path d="M0 860 C220 940 420 900 660 840 C960 760 1240 820 1540 860 C1700 880 1860 860 2000 840 V1200 H0 Z" fill="#0b2d4c" opacity="0.65" />
+  <path d="M0 900 C260 970 460 940 720 880 C1000 820 1340 860 1680 900 C1820 916 1920 910 2000 900 V1200 H0 Z" fill="#9ae6ff" opacity="0.25" />
+  <g stroke="#5df2ff" stroke-opacity="0.4" stroke-width="6" fill="none">
+    <path d="M140 900 Q320 860 520 900 T900 900 T1280 880 T1700 920" />
+    <path d="M220 1020 Q400 980 620 1000 T1160 980 T1680 1040" />
+  </g>
+</svg>

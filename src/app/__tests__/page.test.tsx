@@ -37,7 +37,7 @@ function getTextContent(element: ElementWithChildren) {
   return text.trim();
 }
 
-test('Home renders the neon hero heading', () => {
+test('Home renders the modern hero heading', () => {
   const home = Home() as ElementWithChildren;
   assert.equal(home.type, 'main', 'Home should render a <main> element');
 
@@ -48,26 +48,25 @@ test('Home renders the neon hero heading', () => {
   }
   assert.equal(
     getTextContent(heading),
-    'Immersive photography sculpted in neon light and analog texture.'
+    'Crafting atmospheric narratives through modern photography.'
   );
 });
 
-test('Home showcases four interactive collection cards', () => {
+test('Home showcases interactive collection cards', () => {
   const home = Home() as ElementWithChildren;
   const elements = collectElements(home);
   const cards = elements.filter((child) => child.type === 'article');
 
-  assert.equal(cards.length, 4, 'Expected to find four featured collection cards');
+  assert.equal(cards.length, 3, 'Expected to find three featured collection cards');
 });
 
-test('Home includes a primary enter gallery call to action', () => {
+test('Home includes a primary call to action', () => {
   const home = Home() as ElementWithChildren;
   const elements = collectElements(home);
-  const primary = elements.find(
-    (element) => getTextContent(element) === 'Enter Gallery'
-  );
+  const buttons = elements.filter((child) => child.type === 'button');
+  const primary = buttons.find((button) => getTextContent(button) === 'View Collections');
 
   if (!primary) {
-    throw new Error('Expected to find the primary Enter Gallery action');
+    throw new Error('Expected to find the primary View Collections button');
   }
 });

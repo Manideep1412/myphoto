@@ -7,6 +7,14 @@ import classNames from "classnames";
 import { withImageParams } from "@/lib/image-url";
 
 export function GalleryCard({ photo, onClick }: { photo: Photo; onClick?: (photo: Photo) => void }) {
+  const isSvg = photo.src.trim().toLowerCase().endsWith(".svg");
+  const imageProps = isSvg
+    ? {}
+    : {
+        placeholder: "blur" as const,
+        blurDataURL: photo.blurDataUrl,
+      };
+
   return (
     <motion.article
       layout
@@ -28,9 +36,8 @@ export function GalleryCard({ photo, onClick }: { photo: Photo; onClick?: (photo
           alt={photo.description}
           fill
           className="object-cover transition duration-700 ease-out hover:scale-105"
-          placeholder="blur"
-          blurDataURL={photo.blurDataUrl}
           sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+          {...imageProps}
         />
         <div className="gallery-overlay" />
         <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-4 py-4 text-white">

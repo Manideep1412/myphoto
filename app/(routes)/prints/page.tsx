@@ -151,6 +151,7 @@ function TiltCard({ print, hovered, setHovered, onAdd }: TiltCardProps) {
           alt={print.title}
           fill
           className={classNames("object-cover transition duration-700", hovered === print.id ? "scale-105" : "scale-100")}
+          sizes="(min-width: 1024px) 24vw, (min-width: 768px) 40vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40" />
       </div>

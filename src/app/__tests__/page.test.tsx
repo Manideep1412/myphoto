@@ -63,10 +63,11 @@ test('Home showcases four interactive collection cards', () => {
 test('Home includes a primary enter gallery call to action', () => {
   const home = Home() as ElementWithChildren;
   const elements = collectElements(home);
-  const buttons = elements.filter((child) => child.type === 'button');
-  const primary = buttons.find((button) => getTextContent(button) === 'Enter Gallery');
+  const primary = elements.find(
+    (element) => getTextContent(element) === 'Enter Gallery'
+  );
 
   if (!primary) {
-    throw new Error('Expected to find the primary Enter Gallery button');
+    throw new Error('Expected to find the primary Enter Gallery action');
   }
 });

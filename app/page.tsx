@@ -1,11 +1,10 @@
 "use client";
 
 import { Hero } from "./components/hero";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { listPhotos, listSeries, listTags } from "@/lib/media";
 import { GalleryCard } from "./components/gallery-card";
 import { Lightbox } from "./components/lightbox";
-import { useIntersectionObserver } from "@react-hook/intersection-observer";
 import Link from "next/link";
 
 const INITIAL_COUNT = 3;
@@ -19,13 +18,37 @@ export default function HomePage() {
   const photos = listPhotos({ tag: selectedTag });
   const series = listSeries();
 
-  const loadMoreRef = useIntersectionObserver({
-    onChange: (entry) => {
-      if (entry.isIntersecting) {
-        setVisible((prev) => Math.min(photos.length, prev + 2));
-      }
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const node = loadMoreRef.current;
+    if (!node) {
+      return;
     }
-  });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisible((prev) => {
+            if (prev >= photos.length) {
+              return prev;
+            }
+            return Math.min(photos.length, prev + 2);
+          });
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: "0px 0px 200px 0px",
+      threshold: 0
+    });
+
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [photos.length]);
 
   return (
     <div className="space-y-32 pb-32">
@@ -71,7 +94,7 @@ export default function HomePage() {
             <GalleryCard key={photo.id} photo={photo} onClick={(item) => setLightboxId(item.id)} />
           ))}
         </div>
-        <div ref={loadMoreRef.ref} className="mt-6 h-12 w-full animate-pulse rounded-full border border-dashed border-white/20" />
+        <div ref={loadMoreRef} className="mt-6 h-12 w-full animate-pulse rounded-full border border-dashed border-white/20" />
       </section>
 
       <section className="mx-auto max-w-6xl px-6">

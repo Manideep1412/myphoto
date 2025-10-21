@@ -16,7 +16,6 @@ export function GalleryCard({ photo, onClick }: { photo: Photo; onClick?: (photo
       };
   return (
     <motion.article
-      layout
       whileHover={{ y: -8 }}
       className="gallery-item cursor-pointer"
       onClick={() => onClick?.(photo)}

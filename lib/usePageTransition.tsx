@@ -13,17 +13,19 @@ export function PageTransition({ children }: PropsWithChildren) {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, filter: "blur(12px)" }}
-        animate={{ opacity: 1, filter: "blur(0px)" }}
-        exit={{ opacity: 0, filter: "blur(24px)" }}
-        transition={transition}
-        className="min-h-screen"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div className="relative">
+      <AnimatePresence initial={false}>
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 0, y: 24, filter: "blur(12px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          exit={{ opacity: 0, y: -24, filter: "blur(16px)" }}
+          transition={transition}
+          className="relative min-h-screen"
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }

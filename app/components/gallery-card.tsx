@@ -14,7 +14,6 @@ export function GalleryCard({ photo, onClick }: { photo: Photo; onClick?: (photo
         placeholder: "blur" as const,
         blurDataURL: photo.blurDataUrl,
       };
-
   return (
     <motion.article
       whileHover={{ y: -8 }}

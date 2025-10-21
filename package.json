@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:compile": "tsc --project tsconfig.test.json",
+    "test": "npm run test:compile && node --test $(find ./.test-dist -name '*.test.js')"
   },
   "dependencies": {
     "react": "19.1.0",

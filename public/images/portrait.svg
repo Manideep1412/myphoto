@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960">
+  <defs>
+    <linearGradient id="portrait-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12061f" />
+      <stop offset="100%" stop-color="#051a29" />
+    </linearGradient>
+    <radialGradient id="portrait-glow" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ff5fb9" stop-opacity="0.7" />
+      <stop offset="55%" stop-color="#3b0a3d" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#090414" stop-opacity="1" />
+    </radialGradient>
+    <radialGradient id="portrait-glow-2" cx="70%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#29f6ff" stop-opacity="0.65" />
+      <stop offset="70%" stop-color="#071c28" stop-opacity="0.85" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="960" fill="url(#portrait-bg)" />
+  <rect width="800" height="960" fill="url(#portrait-glow)" />
+  <rect width="800" height="960" fill="url(#portrait-glow-2)" />
+  <path d="M200 720 Q320 520 400 540 T600 380" stroke="#ff7ad1" stroke-width="30" stroke-opacity="0.35" fill="none" stroke-linecap="round" />
+  <path d="M180 860 Q320 760 460 800 T680 700" stroke="#2cf9ff" stroke-width="24" stroke-opacity="0.28" fill="none" stroke-linecap="round" />
+</svg>

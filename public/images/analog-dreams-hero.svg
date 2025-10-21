@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200">
+  <defs>
+    <linearGradient id="ad-bg" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#071d26" />
+      <stop offset="50%" stop-color="#0d2d39" />
+      <stop offset="100%" stop-color="#2c0d33" />
+    </linearGradient>
+    <radialGradient id="ad-glow" cx="40%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#24ffe5" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#08242d" stop-opacity="0.85" />
+    </radialGradient>
+    <radialGradient id="ad-glow-2" cx="80%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#ff58c7" stop-opacity="0.55" />
+      <stop offset="70%" stop-color="#22071e" stop-opacity="0.8" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#ad-bg)" />
+  <rect width="1600" height="1200" fill="url(#ad-glow)" />
+  <rect width="1600" height="1200" fill="url(#ad-glow-2)" />
+  <path d="M0 880 Q360 700 760 760 T1600 680" stroke="#2dffed" stroke-width="120" stroke-linecap="round" fill="none" opacity="0.35" />
+  <path d="M-80 680 Q400 500 900 560 T1680 520" stroke="#ff7de2" stroke-width="90" stroke-linecap="round" fill="none" opacity="0.28" />
+</svg>

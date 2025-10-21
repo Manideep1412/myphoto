@@ -13,6 +13,32 @@ body {
   min-height: 100%;
 }
 
+.hero-gradient {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 31, 140, 0.35), transparent 55%),
+    radial-gradient(circle at 75% 25%, rgba(0, 229, 255, 0.32), transparent 60%),
+    radial-gradient(circle at 50% 80%, rgba(111, 255, 175, 0.28), transparent 60%),
+    linear-gradient(135deg, rgba(15, 18, 32, 0.65), rgba(13, 10, 26, 0.35));
+  filter: saturate(125%);
+  animation: hero-gradient-shift 16s ease-in-out infinite alternate;
+  transform: scale(1.05);
+}
+
+@keyframes hero-gradient-shift {
+  0% {
+    transform: scale(1.05) translate3d(0, 0, 0);
+    filter: saturate(120%) hue-rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) translate3d(-2%, -1%, 0);
+    filter: saturate(135%) hue-rotate(-12deg);
+  }
+  100% {
+    transform: scale(1.08) translate3d(1%, 2%, 0);
+    filter: saturate(140%) hue-rotate(8deg);
+  }
+}
+
 body.neon {
   --accent: #ff1f8c;
   --accent-secondary: #00e5ff;

@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(255, 31, 140, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(0, 229, 255, 0.08), transparent 45%), #0f1115;
+  min-height: 100%;
+}
+
+body.neon {
+  --accent: #ff1f8c;
+  --accent-secondary: #00e5ff;
+  --panel: rgba(15, 17, 21, 0.7);
+  --border-glow: rgba(255, 31, 140, 0.35);
+}
+
+body.brutalist {
+  --accent: #111111;
+  --accent-secondary: #f5f5f5;
+  --panel: rgba(245, 245, 245, 0.96);
+  --border-glow: rgba(0, 0, 0, 0.1);
+}
+
+body.filmic {
+  --accent: #bfa98a;
+  --accent-secondary: #47624f;
+  --panel: rgba(21, 24, 27, 0.78);
+  --border-glow: rgba(191, 169, 138, 0.25);
+}
+
+.glass-panel {
+  background: var(--panel);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+}
+
+.magnetic-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.magnetic-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: radial-gradient(circle at top left, rgba(255, 31, 140, 0.6), transparent 65%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.magnetic-button:hover::after,
+.magnetic-button:focus-visible::after {
+  opacity: 1;
+}
+
+.liquid-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-button::before {
+  content: "";
+  position: absolute;
+  inset: -60% -20%;
+  background: conic-gradient(from 90deg, rgba(255, 31, 140, 0.8), rgba(0, 229, 255, 0.8), rgba(255, 31, 140, 0.8));
+  filter: blur(32px);
+  animation: swirl 12s linear infinite;
+}
+
+.liquid-button span {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes swirl {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+a {
+  color: inherit;
+}
+
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+}
+
+.command-palette-backdrop {
+  background: radial-gradient(circle at 30% 20%, rgba(255, 31, 140, 0.15), transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(0, 229, 255, 0.15), transparent 65%), rgba(0, 0, 0, 0.72);
+}
+
+.filter-chip {
+  position: relative;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  transition: transform 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+.filter-chip:hover,
+.filter-chip[aria-pressed="true"] {
+  border-color: rgba(255, 31, 140, 0.75);
+  color: #ff1f8c;
+  transform: translateY(-2px) scale(1.02);
+}
+
+.gallery-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallery-grid {
+    column-count: 3;
+  }
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(15, 17, 21, 0.95), rgba(15, 17, 21, 0.65));
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.32), rgba(255, 31, 140, 0.36));
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.lightbox-backdrop {
+  background: radial-gradient(circle at 20% 20%, rgba(255, 31, 140, 0.25), transparent 50%),
+    rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-canvas {
+  cursor: grab;
+}
+
+.lightbox-canvas:active {
+  cursor: grabbing;
+}
+
+.timeline-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.timeline-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.timeline-track::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: #ff1f8c;
+}

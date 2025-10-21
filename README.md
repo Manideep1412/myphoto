@@ -1,37 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MyPhoto – Modern Photography Portfolio
+
+A production-ready Next.js 14 portfolio that blends cinematic photography with interactive neon styling. The site uses Tailwind CSS, Framer Motion, and GSAP to deliver scroll-triggered reveals, magnetic navigation, glassmorphism, and reduced-motion aware micro-interactions.
+
+## Features
+
+- **Sticky glass navigation** with magnetic hover tabs, command palette (`Cmd + K`), and theme skins (Neon, Brutalist, Filmic).
+- **Hero experience** featuring a video background, parallax layers, split-text reveal animation, and a liquid CTA button.
+- **Work gallery** with masonry layout, filter chips, EXIF tooltips, blur-up AVIF/WebP images, and infinite scroll loading.
+- **Lightbox** supporting drag-to-pan, inertia zoom, filmstrip thumbnails, keyboard navigation, compare-two mode, and print size prompt.
+- **Series storytelling** pages with pinned chapters, scroll-told narrative, and before/after slider for grading breakdowns.
+- **Prints shop** using 3D tilt cards, variant selectors, a spring-animated slide-over cart, and localStorage persistence.
+- **About** page featuring polygon portrait mask, timeline chips, and animated CV download button.
+- **Contact** page with animated slot selection, honeypot anti-spam field, and confetti celebration respecting reduced-motion preferences.
+- **Global performance** optimizations including AVIF/WebP formats, hover prefetch, lazy loading, page transitions, and accessibility enhancements.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build for production:
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Start the production server:
 
-## Learn More
+```bash
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run linting:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Execute the Vitest suite:
 
-## Deploy on Vercel
+```bash
+npm test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# myphoto
+```
+app/          # App Router pages, components, and layout
+├─ components # Shared UI such as navbar, hero, gallery card, lightbox
+├─ (routes)   # Route groups for Work, Series, Prints, About, Contact
+lib/          # Animation hooks, media helpers, reduced-motion utilities
+data/         # Sample photo, series, and print metadata
+public/       # Static assets including cv.pdf
+```
+
+## Accessibility & Performance
+
+- Honors `prefers-reduced-motion` to disable confetti and heavy animations.
+- Ensures 12:1 contrast ratios for critical text and provides focus outlines.
+- Uses lazy loading, responsive `sizes`, AVIF/WebP, and prefetch-on-hover navigation to target <3s LCP on mobile.

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffb347" />
+      <stop offset="50%" stop-color="#ff5f6d" />
+      <stop offset="100%" stop-color="#2bd2ff" />
+    </linearGradient>
+    <linearGradient id="veins" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1dd1a1" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#feca57" stop-opacity="0.7" />
+    </linearGradient>
+    <filter id="noise" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" result="noise" />
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.8 0 0 0 0 0.6 0 0 0 0 0.35 0 0 0 0.25 0" />
+      <feBlend in="SourceGraphic" in2="noise" mode="overlay" />
+    </filter>
+  </defs>
+  <rect width="1200" height="1600" fill="#0b0c10" />
+  <g opacity="0.9">
+    <path d="M0 300 C300 420 480 180 740 320 C960 430 1100 220 1200 360 V1600 H0 Z" fill="url(#gradient)" />
+    <path d="M0 850 C260 760 420 960 620 840 C860 700 960 920 1200 780 V1600 H0 Z" fill="url(#veins)" />
+  </g>
+  <g fill="none" stroke="#ffeaa7" stroke-opacity="0.4" stroke-width="6">
+    <path d="M160 260 C260 420 220 640 340 820" />
+    <path d="M480 180 C520 440 600 620 760 920" />
+    <path d="M880 220 C940 520 1020 780 1120 1120" />
+  </g>
+  <circle cx="260" cy="520" r="90" fill="#ff9f43" opacity="0.5" />
+  <circle cx="840" cy="460" r="140" fill="#1dd1a1" opacity="0.35" />
+</svg>

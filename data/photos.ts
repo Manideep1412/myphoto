@@ -22,7 +22,7 @@ export const PHOTOS: Photo[] = [
     id: "nocturne-bridge",
     title: "Neon Veins",
     description: "Magenta light slicing across river mist.",
-    src: "https://images.unsplash.com/photo-1526481280695-3c46917adf99",
+    src: "/images/neon-veins.svg",
     blurDataUrl:
       "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGBQUGB4aHB0gJCAmJygpKSo2NzY2Oi84QzQ3QkJKS0pOT09PT1laYWVhbnV2eXl+/9sAQwEFBQYGBgwKCgwcEhIRCx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0fHx0f/8AAEQgABAAHAwEiAAIRAQMRAf/EABQAAQAAAAAAAAAAAAAAAAAAAAb/xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAAB5gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAT8A5//Z",
     aspectRatio: 3 / 2,
@@ -41,7 +41,7 @@ export const PHOTOS: Photo[] = [
     id: "cyan-dunes",
     title: "Cyan Drift",
     description: "Moonlit dunes bending into electric blue fog.",
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    src: "/images/cyan-drift.svg",
     blurDataUrl:
       "data:image/jpeg;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMEBQEC/8QAIBABAAICAQQDAQAAAAAAAAAAAAECAwQRAAUSITFBYYH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERAkH/2gAMAwEAAhEDEQA/AJrTfVXQ1Wy6W4QSeMSREid9mPynp970nMPVCyiuNke0srSY9ThWrRbgCvm43BxwBYnJpn2uLW0EVvPGdhsDGdmc/QqyiZ2cxf/Z",
     aspectRatio: 4 / 5,
@@ -60,7 +60,7 @@ export const PHOTOS: Photo[] = [
     id: "urban-forest",
     title: "Analog Whisper",
     description: "Concrete softened by moss and amber light.",
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixid=magenta",
+    src: "/images/analog-whisper.svg",
     blurDataUrl:
       "data:image/jpeg;base64,/9j/2wBDAAoHBwkHBgoICAoKCgoMDR8MDxAPDw8NFREYFhURExUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAABBAMBAAAAAAAAAAAAAAAEAAIDBQYBBwj/xAA/EAACAQIEAwYDBwMDBQAAAAAAAQIDEQQFITEGEkFRBxMiYXGBkaEjQrHB0RRC8AcVI1NicuHxM3KSorLS/8QAGgEBAQADAQEAAAAAAAAAAAAAAAECAwQFBv/EAC8RAAICAQMDAQYHAAAAAAAAAAABAhEDBBIhMUFRBRMiYXGBkaHB8EJicoH/2gAMAwEAAhEDEQA/AB6ZRmNJG0jogBjiIAVz3T5TbjcVXzdAkY8Yqxfsgc12vOfYHgnmEy5uXQ6Fz1L0m82w5LlHCeF5E3sT81U4W1xrlSI5zjI1q0qJ2QeHqB0H5n/2Q==",
     aspectRatio: 3 / 4,
@@ -79,7 +79,7 @@ export const PHOTOS: Photo[] = [
     id: "luminous-lake",
     title: "Aurora Veil",
     description: "A cyan aurora mirrored in silent water.",
-    src: "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+    src: "/images/aurora-veil.svg",
     blurDataUrl:
       "data:image/jpeg;base64,/9j/2wCEAAkGBxAQEBAQEBAVFRUVFRUVFRUQFRUQFRUVFRUWFhUVFRUYHSggGBolGxUVITEhJSorLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi0lHyYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAFBgADBAECB//EADoQAAEDAgQDBgQEBwAAAAAAAAECAwQFEQAhBhIxQVFhEyJxgZGh8BQjMrHhFSRCUnLxFyRzoqKy/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAjEQACAwACAgMBAQAAAAAAAAAAAQIRAxIhMUFRBCIyQmHh/9oADAMBAAIRAxEAPwCv5VvLONgJDt4RSoyyoEGSce3P8AeoP5cE20QMthHVRhJVUkgE1VkceD+1fqS1G5V1qzOJ0ixSxGbO2SM7gLHG/xp73dYcIDbR8Qqdcl1cMWBwfvnJr1U66LuVN8iB6XEvlP7dL7Y9aN5+5S31EfeJAxvTa9LFjD0MgBQy/M/zNDv5g4I9A//9k=",
     aspectRatio: 3 / 2,
@@ -118,7 +118,7 @@ export const SERIES: Series[] = [
     slug: "nocturnal-echoes",
     title: "Nocturnal Echoes",
     summary: "Tokyo streets rendered in neon fog and reflective rain.",
-    heroImage: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    heroImage: "/images/nocturnal-echoes-hero.svg",
     color: "from-magenta to-cyan",
     chapters: [
       {
@@ -132,8 +132,8 @@ export const SERIES: Series[] = [
         anchor: "geometry"
       }
     ],
-    before: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e",
-    after: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    before: "/images/nocturnal-before.svg",
+    after: "/images/nocturnal-after.svg",
     story:
       "Shot over seven nights with a lightweight rig and a custom cyan-magenta LUT to preserve the surreal glow of Tokyo after dark.",
     gear: ["Sony A7R V", "24mm f/1.4 GM", "Peak Design Travel Tripod", "Prism Lens FX Filter"]
@@ -142,7 +142,7 @@ export const SERIES: Series[] = [
     slug: "analog-dreams",
     title: "Analog Dreams",
     summary: "Desert horizons softened by experimental film stocks.",
-    heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429",
+    heroImage: "/images/analog-dreams-hero.svg",
     color: "from-cyan to-magenta",
     chapters: [
       {
@@ -156,8 +156,8 @@ export const SERIES: Series[] = [
         anchor: "silence"
       }
     ],
-    before: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    after: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e",
+    before: "/images/analog-before.svg",
+    after: "/images/analog-after.svg",
     story:
       "Using cross-processed instant film introduced organic light leaks that informed the palette of the entire series.",
     gear: ["Pentax 67II", "105mm f/2.4", "Cinestill 800T", "Gitzo Systematic"]
@@ -178,7 +178,7 @@ export const PRINTS: Print[] = [
   {
     id: "print-neon",
     title: "Neon Veins",
-    image: "https://images.unsplash.com/photo-1526481280695-3c46917adf99",
+    image: "/images/neon-veins.svg",
     price: 240,
     sizes: ["12x18", "16x24", "20x30"],
     paper: ["Hahnemühle Photo Rag", "Glossy Metallic"],
@@ -187,7 +187,7 @@ export const PRINTS: Print[] = [
   {
     id: "print-dunes",
     title: "Cyan Drift",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    image: "/images/cyan-drift.svg",
     price: 320,
     sizes: ["11x14", "18x24", "24x36"],
     paper: ["Matte Cotton", "Pearl Lustre"],
